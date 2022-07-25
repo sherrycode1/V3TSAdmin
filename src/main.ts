@@ -1,7 +1,11 @@
 import { createApp } from "vue"
 import App from "./App.vue"
 
-import "./service/axios.demo"
+// import "./service/axios.demo"
+import myRequest from "./service"
+myRequest.request({
+  url: "/home/multidata",
+})
 import router from "./router"
 import store from "./store"
 import { registerApp } from "./global/index"
