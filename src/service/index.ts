@@ -6,7 +6,11 @@ const myRequest = new useRequest({
   timeout: TIME_OUT,
   interceptors: {
     requestInterceptor: (config) => {
-      console.log("success")
+      // 携带token拦截
+      // const token = "a"
+      // if (token) {
+      //   config.headers?.Authorization = `bearer${token}`
+      // }
       return config
     },
     requestInterceptorCatch: (error) => {
@@ -14,7 +18,6 @@ const myRequest = new useRequest({
       return error
     },
     responseInterceptor: (config) => {
-      console.log("success res")
       return config
     },
     responseInterceptorCatch(error) {

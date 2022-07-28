@@ -4,10 +4,11 @@ import type { AxiosRequestConfig, AxiosResponse } from "axios"
 export interface useRequestInterceptors {
   requestInterceptor?: (config: AxiosRequestConfig) => AxiosRequestConfig
   requestInterceptorCatch?: (error: any) => any
-  responseInterceptor?: (config: AxiosResponse) => AxiosResponse
+  responseInterceptor?: (config: any) => any
   responseInterceptorCatch?: (error: any) => any
 }
 // 往axios的config类型中添加拦截器
 export interface useRequestConfig extends AxiosRequestConfig {
   interceptors?: useRequestInterceptors
+  showLoading?: boolean
 }
